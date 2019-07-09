@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="springboot.demo.dao.IntAuthTokenDao">
+    <resultMap id="BaseResultMap" type="springboot.demo.domain.IntAuthToken">
+        <result column="int_auth_token" property="intAuthToken" />
+        <result column="id" property="user.id" />
+        <result column="name" property="user.name" />
+        <result column="age" property="user.age" />
+        <result column="device" property="device" />
+        <result column="ip" property="ip" />
+    </resultMap>
+
+    <parameterMap id="IntAuthToken" type="springboot.demo.domain.IntAuthToken"/>
+
+    <sql id="Base_Column_List">
+		iat.int_auth_token 'intAuthToken',
+		u.id 'user.id',
+		u.name 'user.name',
+		u.age 'user.age',
+		iat.device,
+		iat.ip
+	</sql>
+
+    <select id="findByIntAuthToken" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from int_auth_token_cache iat
+        inner join user u on u.id = iat.id
+        where iat.int_auth_token = #{intAuthToken}
+    </select>
+
+</mapper>

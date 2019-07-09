@@ -1,0 +1,19 @@
+server:
+  port: 9992
+  context-path: /
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+  ## 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+## Mybatis配置
+mybatis:
+  type-aliases-package: springboot.demo.domain
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  config: classpath:log4j2.xml
