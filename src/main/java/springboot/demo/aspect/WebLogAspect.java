@@ -31,25 +31,28 @@ public class WebLogAspect {
     }
 
     @Before("webLog()")
-    public void doBefore(JoinPoint joinPoint) throws Throwable {
+    public void doBefore(JoinPoint joinPoint) {
         if (logger.isInfoEnabled()) {
             startTime.set(System.currentTimeMillis());
 
             // 接收到请求，记录请求内容
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-            HttpServletRequest request = attributes.getRequest();
 
-            // 记录下请求内容
-            logger.info("URL : {}.", request.getRequestURL().toString());
-            logger.info("HTTP_METHOD : {}.", request.getMethod());
-            logger.info("IP : {}." + request.getRemoteAddr());
-            logger.info("CLASS_METHOD : {}.", joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-            logger.info("ARGS : {}.", Arrays.toString(joinPoint.getArgs()));
+            if (attributes != null) {
+                HttpServletRequest request = attributes.getRequest();
+
+                // 记录下请求内容
+                logger.info("URL : {}.", request.getRequestURL().toString());
+                logger.info("HTTP_METHOD : {}.", request.getMethod());
+                logger.info("IP : {}." + request.getRemoteAddr());
+                logger.info("CLASS_METHOD : {}.", joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+                logger.info("ARGS : {}.", Arrays.toString(joinPoint.getArgs()));
+            }
         }
     }
 
     @AfterReturning(returning = "ret", pointcut = "webLog()")
-    public void doAfterReturning(Object ret) throws Throwable {
+    public void doAfterReturning(Object ret) {
         if (logger.isInfoEnabled()) {
             logger.info("RESPONSE: {}.", ret);
             logger.info("SPEND TIME: {}.", (System.currentTimeMillis() - startTime.get()));

@@ -27,8 +27,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Controller
-@RequestMapping("/es")
+//@Controller
+//@RequestMapping("/es")
 public class ElasticsearchController {
 
     @Autowired
