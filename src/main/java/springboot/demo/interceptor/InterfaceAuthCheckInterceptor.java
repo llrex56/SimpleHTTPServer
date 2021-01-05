@@ -22,6 +22,7 @@ class InterfaceAuthCheckInterceptor implements HandlerInterceptor {
         if (logger.isInfoEnabled()) {
             logger.info("interceptor url：" + request.getRequestURL());
         }
+        System.out.println(request.getHeader("Content-Type"));
         return true;
     }
 

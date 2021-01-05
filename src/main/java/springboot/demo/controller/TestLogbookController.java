@@ -2,11 +2,14 @@ package springboot.demo.controller;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.annotation.RequestScope;
 
 /**
  * 测试logbook日志输出
  */
+//@Controller
 @RestController
 @RequestMapping("/logbook")
 @RequiredArgsConstructor
@@ -18,10 +21,11 @@ public class TestLogbookController {
         return param;
     }
 
+//    @RequestMapping("/test/post")
     @PostMapping("/test/post")
     @ResponseBody
-    public Object testPost(@RequestParam String param) {
-        return param;
+    public Object testPost(TestJsonParam param, @RequestParam String param2, String param3) {
+        return param + " : " + param2 + " : " + param3;
     }
 
     @PostMapping("/test/json")
@@ -31,7 +35,7 @@ public class TestLogbookController {
     }
 
     @Data
-    static class TestJsonParam {
+    public static class TestJsonParam {
         private String id;
         private String name;
     }
