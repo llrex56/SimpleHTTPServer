@@ -11,7 +11,6 @@ import springboot.demo.BaseTest;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * FizzBuzz
@@ -34,7 +33,7 @@ public class TddTest02 extends BaseTest {
         Assert.assertThrows(IllegalArgumentException.class, () -> new FizzBuzz(null).toString());
     }
 
-    @ParameterizedTest(name = "should return {1} for input {0}")
+    @ParameterizedTest(name = "should return {1} when input {0}")
     @CsvSource({
             "1, 1",
             "2, 2",
