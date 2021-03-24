@@ -38,5 +38,13 @@ public class TestLogbookController {
     public static class TestJsonParam {
         private String id;
         private String name;
+
+        private User user;
+    }
+
+    @Data
+    public static class User {
+        private String id;
+        private String userName;
     }
 }

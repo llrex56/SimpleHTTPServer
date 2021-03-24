@@ -49,6 +49,7 @@ public class TestApplicationEventController {
 //        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
         public void testEventListener(TestEvent event) {
             System.out.println("event-listener, event: " + event);
+            throw new IllegalArgumentException("exception for test");
         }
     }
 
