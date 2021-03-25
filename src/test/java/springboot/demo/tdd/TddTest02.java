@@ -3,11 +3,11 @@ package springboot.demo.tdd;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import springboot.demo.BaseTest;
+import org.junit.jupiter.params.provider.NullSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
  * @version 1.0
  * @date 2021/3/24 14:34
  */
-public class TddTest02 extends BaseTest {
+public class TddTest02 {
 
     /*
      * Product backlog
@@ -28,9 +28,11 @@ public class TddTest02 extends BaseTest {
      * 4. 如果同时被 3 和 5 整除则报 “FizzBuzz”
      */
 
-    @Test
-    public void should_throw_exception_when_input_null() {
-        Assert.assertThrows(IllegalArgumentException.class, () -> new FizzBuzz(null).toString());
+    @ParameterizedTest
+    @NullSource
+    @ValueSource(ints = { -1, 0, 101 })
+    void should_throw_illegal_argument_exception_when_input_invalid_number(Integer input) {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new FizzBuzz(input).toString());
     }
 
     @ParameterizedTest(name = "should return {1} when input {0}")
@@ -40,11 +42,12 @@ public class TddTest02 extends BaseTest {
             "3, Fizz",
             "5, Buzz",
             "15, FizzBuzz",
-            "20, Buzz"
+            "20, Buzz",
+            "100, Buzz"
     })
-    public void should_return_expected_when_input_number(int input, String expected) {
+    void should_return_expected_when_input_number(int input, String expected) {
         String result = new FizzBuzz(input).toString();
-        Assert.assertEquals(expected, result);
+        org.assertj.core.api.Assertions.assertThat(result).isEqualTo(expected);
     }
 }
 
@@ -94,6 +97,7 @@ class FizzBuzz {
 
     public String toString() {
         org.springframework.util.Assert.notNull(number, "Number can not be null!");
+        org.springframework.util.Assert.isTrue(number >= 1 && number <= 100, "Number must between 1 to 100!");
 
         return Rules.all()
                 .stream()
