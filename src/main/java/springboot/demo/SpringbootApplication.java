@@ -4,20 +4,12 @@ import com.github.davidmarquis.redisscheduler.RedisDriver;
 import com.github.davidmarquis.redisscheduler.RedisTaskScheduler;
 import com.github.davidmarquis.redisscheduler.drivers.spring.RedisTemplateDriver;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.annotation.Resource;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.function.Function;
 
 @SpringBootApplication              // Spring Boot 应用的标识
 //@EnableCaching                      // 开启缓存

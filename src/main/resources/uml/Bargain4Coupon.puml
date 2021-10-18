@@ -1,0 +1,36 @@
+@startuml
+
+start
+
+while(:分享砍价);
+
+if (是否作弊?) then (y)
+
+  fork
+    :作弊方式1;
+    note left: 当前用户设备ID在帮砍用户中
+
+    :砍不中;
+  fork again
+    :作弊方式2;
+
+    note right: 砍次数>=6，帮砍用户超过50%\n为大陆手机号且没有支付订单
+
+    :砍不中;
+    stop
+
+  end fork
+
+else (n)
+
+  if (是否砍成功?) then (y)
+    :派券;
+    stop
+
+  else (n)
+    endif
+
+endif
+endwhile
+
+@enduml

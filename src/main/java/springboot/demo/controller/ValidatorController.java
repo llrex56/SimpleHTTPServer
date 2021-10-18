@@ -1,7 +1,11 @@
 package springboot.demo.controller;
 
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.validator.constraints.ScriptAssert;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,6 +29,34 @@ public class ValidatorController {
     @ResponseBody
     public Object test(String password) {
         return loginValidators.isValid(password);
+    }
+
+    @GetMapping("/test2")
+    @ResponseBody
+    public Object test2(@Validated(CHECK.class) TestParam param) {
+        return param;
+    }
+
+    @Data
+    @ScriptAssert(
+            lang="javascript",
+            script="springboot.demo.controller.ValidatorController.TestParam.checkParams(_this.id,_this.age)",
+            groups = CHECK.class
+    )
+    static class TestParam {
+        private String id;
+        private Integer age;
+
+        public static boolean checkParams(String id, Integer age) {
+            if (!StringUtils.isEmpty(id) && age != null) {
+                return true;
+            }
+            return false;
+        }
+    }
+
+    public interface CHECK {
+
     }
 
     @Component

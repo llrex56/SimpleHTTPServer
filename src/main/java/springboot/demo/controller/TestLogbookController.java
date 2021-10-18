@@ -6,6 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.annotation.RequestScope;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
+import java.util.Locale;
+
 /**
  * 测试logbook日志输出
  */
@@ -17,7 +21,9 @@ public class TestLogbookController {
 
     @GetMapping("/test/get")
     @ResponseBody
-    public Object testGet(@RequestParam String param) {
+    public Object testGet(@RequestParam String param, HttpServletRequest request) {
+        Locale locale = request.getLocale();
+        Enumeration<Locale> locales = request.getLocales();
         return param;
     }
 
