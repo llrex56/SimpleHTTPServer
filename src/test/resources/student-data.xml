@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<dataset>
-    <student id="1" firstname="张" lastname="三" age="1"/>
-    <student id="2" firstname="李" lastname="四" age="2"/>
-    <student id="3" firstname="王" lastname="五" age="3"/>
-</dataset>

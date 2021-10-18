@@ -1,16 +1,7 @@
 package springboot.demo.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Student implements Serializable {
 
      private int id;
@@ -20,6 +11,8 @@ public class Student implements Serializable {
      private String lastname;
 
      private int age;
+
+     public Student() {}
 
     public int getId() {
         return id;
