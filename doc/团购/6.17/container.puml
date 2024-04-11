@@ -1,0 +1,34 @@
+@startuml
+top to bottom direction
+
+!include <C4/C4_Container>
+!include <C4/C4_Context>
+!include <C4/C4_Component>
+
+LAYOUT_WITH_LEGEND()
+
+title 票务系统-container
+
+Person(customer, "用户")
+System(ticketing_system, "售票系统")
+
+Container_Boundary(app, "售票应用", "Web售票应用") {
+  Component(ticketSelection, "票务选择", "选择票务和座位") {
+    Component(seatSelection, "座位选择", "为票务选择座位")
+  }
+  Component(paymentGateway, "支付网关", "支付处理网关")
+  Component(ticketConfirmation, "票务确认", "确认购票并发送确认邮件")
+}
+Person(ticketSeller, "售票员")
+System(pos, "销售点系统")
+
+customer -> app
+app -down-> ticketSelection
+ticketSelection -> paymentGateway
+paymentGateway -down-> ticketConfirmation
+ticketSeller -> pos
+pos -> ticketing_system
+
+app -down-> ticketing_system
+pos -down-> ticketing_system
+@enduml

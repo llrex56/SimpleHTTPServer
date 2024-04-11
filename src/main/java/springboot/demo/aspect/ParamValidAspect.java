@@ -19,18 +19,18 @@ import java.util.List;
 @Order(2)
 public class ParamValidAspect {
 
-    private Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Pointcut("execution(public * springboot.demo.controller..*.*(..))")
-    public void validateParams() throws Throwable {
+    public void validateParams() {
     }
 
     @Before("validateParams()")
-    public void doBefore(JoinPoint joinPoint) throws Throwable {
+    public void doBefore(JoinPoint joinPoint) {
     }
 
     @AfterReturning(returning = "ret", pointcut = "validateParams()")
-    public void doAfterReturning(Object ret) throws Throwable {
+    public void doAfterReturning(Object ret) {
     }
 
     @Around("validateParams()")
@@ -53,7 +53,7 @@ public class ParamValidAspect {
 
     private BindingResult getBindingResult(Object[] args) {
         for (Object arg: args) {
-            if (arg != null && arg instanceof BindingResult) {
+            if (arg instanceof BindingResult) {
                 return (BindingResult) arg;
             }
         }

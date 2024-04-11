@@ -1,6 +1,10 @@
 package springboot.demo;
 
-import java.util.Random;
+import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author luozhenhong
@@ -9,11 +13,41 @@ import java.util.Random;
  */
 public class Test2 {
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 1000; i++) {
-            System.out.println(getRandomTimeout(60 * 36, 0, 60));
+    @Data
+    static class A {
+        private volatile boolean running = true;
+
+        private List<Integer> list = new ArrayList<>();
+
+        public synchronized void add(Integer item) {
+            list.add(item);
+            running = list.size() != 5;
         }
-//        test();
+
+        public synchronized int size() {
+            return list.size();
+        }
+    }
+
+    public static void main(String[] args) {
+
+        ReentrantLock reentrantLock = new ReentrantLock();
+
+
+
+        A a = new A();
+
+        new Thread(() -> {
+            while (a.running) {};
+            System.out.println("end.............");
+        }, "t2").start();
+
+        new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                a.add(i+1);
+//                System.out.println(i+1);
+            }
+        }, "t1").start();
     }
 
     /**

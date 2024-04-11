@@ -1,0 +1,49 @@
+2018年10月29日
+
+/**
+  * 7:无餐/无早,8:一份早餐,9:两份早餐,
+  * 10:床位早餐,11:床位中餐,12:床位晚餐,41:儿童早,
+  * 15785:三份早餐,15786:四份早餐,15787:五份早餐,15788:六份早餐,15789:七份早餐,15790:八份早餐,15791:九份早餐,15792:十份早餐,
+  * 21923:2大1小早餐,21924 :2大1小晚餐,21925:双早双晚
+  * @param breakfastId
+  * @author shiqing
+  * @time 2017年12月20日 下午6:08:23
+  */
+ public static Integer getBreakfast(Integer breakfastId){
+  if(null == breakfastId){
+   return 0;
+  }
+  switch (breakfastId) {
+   case 7:
+    return 0;
+   case 8:
+    return 1;
+   case 9:
+   case 21923:
+   case 21925:
+    return 2;
+   case 15785:
+    return 3;
+   case 15786:
+    return 4;
+   case 15787:
+    return 5;
+   case 15788:
+    return 6;
+   case 15789:
+    return 7;
+   case 15790:
+    return 8;
+   case 15791:
+    return 9;
+   case 15792:
+    return 10;
+   case 10:
+    return 99;
+   case 125246:
+   case 1476138:
+     return -1;
+   default:
+    return 0;
+  }
+ }

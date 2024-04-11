@@ -1,0 +1,19 @@
+@startuml
+top to bottom direction
+
+!include <C4/C4_Context>
+'!define PINK
+'!define DARK_GRAY
+'!define ORANGE_C4 #f79232
+'!define BLUE_C4 #1d75a3
+'!define GREEN_C4 #6cb33f
+
+LAYOUT_WITH_LEGEND()
+title 票务系统 - Context
+
+Person(customer, "用户")
+System(ticketing, "票务系统")
+System_Ext(supplier, "供应商")
+
+customer -> ticketing : Requests tickets
+@enduml

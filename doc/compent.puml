@@ -1,0 +1,30 @@
+@startuml
+top to bottom direction
+
+!include <C4/C4_Component>
+
+LAYOUT_WITH_LEGEND()
+
+title 票务系统容器图
+
+System_Boundary(c1, "网银") {
+    Container(web_app, "Web 应用", "Go, Java, Spring MVC", "传递静态内容和网银SPA")
+    Container(spa, "单页应用", "JavaScript, Angular", "通过浏览器对用户提供所有的网银功能")
+    Container(mobile_app, "手机应用", "ios, android", "通过手机设备提供有限的网银功能")
+    ContainerDb(database, "数据库", "SQL 数据库", "存储用户的注册信息，随机认证密码，访问日志等")
+    Container(backend_api, "API应用", "Java, Docker容器", "通过API提供网银功能")
+}
+System_Ext(email_system, "邮件系统", "网络软件交换系统")
+System_Ext(banking_system, "Mainframe银行系统", "存储所有的核心客户，账号，事务银行信息")
+Rel(customer, web_app, "使用", "HTTPS")
+Rel(customer, spa, "使用", "HTTPS")
+Rel(customer, mobile_app, "使用")
+Rel_Neighbor(web_app, spa, "传输")
+Rel(spa, backend_api, "使用", "异步, JSON/HTTPS")
+Rel(mobile_app, backend_api, "使用", "异步, JSON/HTTPS")
+Rel_Back_Neighbor(database, backend_api, "读写", "同步, JDBC")
+Rel_Back(customer, email_system, "发送邮件到")
+Rel_Back(email_system, backend_api, "发送邮件", SMTP")
+Rel_Neighbor(backend_api, banking_system, "使用", "同步/异步, XML/HTTPS")
+
+@enduml

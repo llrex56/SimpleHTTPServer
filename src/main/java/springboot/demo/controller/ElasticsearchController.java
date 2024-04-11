@@ -22,16 +22,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 //@Controller
 //@RequestMapping("/es")
 public class ElasticsearchController {
 
-    @Autowired
+    @Resource
     private TransportClient client;
 
     @GetMapping("/")
@@ -41,21 +43,21 @@ public class ElasticsearchController {
 
     @GetMapping("/get/book/novel")
     @ResponseBody
-    public ResponseEntity get(@RequestParam(name = "id", defaultValue = "") String id) {
+    public ResponseEntity<Map<String, Object>> get(@RequestParam(name = "id", defaultValue = "") String id) {
         if (id.isEmpty()) {
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         GetResponse result = this.client.prepareGet("book", "novel", id).get();
 
         if (!result.isExists()) {
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity(result.getSource(), HttpStatus.OK);
+        return new ResponseEntity<>(result.getSource(), HttpStatus.OK);
     }
 
     @PostMapping("/add/book/novel")
     @ResponseBody
-    public ResponseEntity add(
+    public ResponseEntity<String> add(
             @RequestParam(name = "author") String author,
             @RequestParam(name = "name") String name,
             @RequestParam(name = "publishDate")
@@ -71,23 +73,23 @@ public class ElasticsearchController {
                     .endObject();
 
             IndexResponse result = this.client.prepareIndex("book", "novel").setSource(content).get();
-            return new ResponseEntity(result.getId(), HttpStatus.OK);
+            return new ResponseEntity<>(result.getId(), HttpStatus.OK);
         } catch (IOException e) {
             e.printStackTrace();
-            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @DeleteMapping("delete/book/novel")
     @ResponseBody
-    public ResponseEntity delete(@RequestParam(name = "id", required = true) String id) {
+    public ResponseEntity<String> delete(@RequestParam(name = "id", required = true) String id) {
         DeleteResponse result = this.client.prepareDelete("book", "novel", id).get();
-        return new ResponseEntity(result.getId(), HttpStatus.OK);
+        return new ResponseEntity<>(result.getId(), HttpStatus.OK);
     }
 
     @PutMapping("update/book/novel")
     @ResponseBody
-    public ResponseEntity update(
+    public ResponseEntity<String> update(
             @RequestParam(name = "id", required = true) String id,
             @RequestParam(name = "name") String name,
             @RequestParam(name = "author") String author,
@@ -112,16 +114,16 @@ public class ElasticsearchController {
             update.doc(content);
 
             UpdateResponse result = this.client.update(update).get();
-            return new ResponseEntity(result.getId(), HttpStatus.OK);
+            return new ResponseEntity<>(result.getId(), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @PostMapping("query/book/novel")
     @ResponseBody
-    public ResponseEntity query(
+    public ResponseEntity<List<Object>> query(
             @RequestParam(name = "author", required = false) String author,
             @RequestParam(name = "name", required = false) String name) {
         BoolQueryBuilder boolQuery = QueryBuilders.boolQuery();
@@ -147,6 +149,6 @@ public class ElasticsearchController {
         for (SearchHit hit : response.getHits()) {
             result.add(hit.getSource());
         }
-        return new ResponseEntity(result, HttpStatus.OK);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

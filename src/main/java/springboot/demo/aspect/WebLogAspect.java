@@ -20,7 +20,7 @@ import java.util.Arrays;
 //@Order(1)
 public class WebLogAspect {
 
-    private Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     ThreadLocal<Long> startTime = new ThreadLocal<>();
 

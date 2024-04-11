@@ -34,7 +34,7 @@ public class LocalCacheUtil {
     static {
         try {
             GLOBAL_CACHE = loadCache(new CacheLoader<String, Object>() {
-                public Object load(String key) throws Exception {
+                public Object load(String key) {
                     // 该方法主要是处理缓存键不存在缓存值时的处理逻辑
                     if (log.isDebugEnabled())
                         log.debug("Guava Cache缓存值不存在，初始化空值，键名：{}", key);
@@ -75,7 +75,7 @@ public class LocalCacheUtil {
     /**
      * 设置缓存值
      *
-     * @param key 缓存键
+     * @param key   缓存键
      * @param value 缓存值
      */
     public static void put(String key, Object value) {
@@ -124,7 +124,7 @@ public class LocalCacheUtil {
     /**
      * 获取缓存值
      *
-     * @param key 缓存键
+     * @param key      缓存键
      * @param callable 加载数据函数
      */
     public static Object getOrLoad(String key, Callable<Object> callable) {
@@ -144,13 +144,13 @@ public class LocalCacheUtil {
             result = get(key);
 
             //if (result == ObjectUtils.NULL) {
-                Object o = callable.call();
+            Object o = callable.call();
 
-                if (o != null) {
-                    put(key, o);
-                    return o;
-                }
-                return null;
+            if (o != null) {
+                put(key, o);
+                return o;
+            }
+            return null;
             //}
         } catch (Exception e) {
             log.error("获取缓存值出错", e);
@@ -162,12 +162,12 @@ public class LocalCacheUtil {
         Object result = get(key);
 
         //if (result == ObjectUtils.NULL) {
-            Object o = loadFunction.get();
+        Object o = loadFunction.get();
 
-            if (o != null) {
-                put(key, o);
-                return o;
-            }
+        if (o != null) {
+            put(key, o);
+            return o;
+        }
         //}
         return result;
     }
@@ -235,7 +235,6 @@ public class LocalCacheUtil {
 
     /**
      * 获取缓存项数量
-     *
      */
     public static long size() {
         long size = 0;
@@ -251,7 +250,6 @@ public class LocalCacheUtil {
 
     /**
      * 获取所有缓存项的键
-     *
      */
     public static List<String> keys() {
         List<String> list = new ArrayList<String>();
@@ -269,7 +267,6 @@ public class LocalCacheUtil {
 
     /**
      * 缓存命中率
-     *
      */
     public static double getHitRate() {
         return GLOBAL_CACHE.stats().hitRate();
@@ -277,7 +274,6 @@ public class LocalCacheUtil {
 
     /**
      * 加载新值的平均时间，单位为纳秒
-     *
      */
     public static double getAverageLoadPenalty() {
         return GLOBAL_CACHE.stats().averageLoadPenalty();
@@ -285,7 +281,6 @@ public class LocalCacheUtil {
 
     /**
      * 缓存项被回收的总数，不包括显式清除
-     *
      */
     public static long getEvictionCount() {
         return GLOBAL_CACHE.stats().evictionCount();

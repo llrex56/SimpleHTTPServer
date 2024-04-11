@@ -1,5 +1,6 @@
 package springboot.demo.interceptor;
 
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 
 class InterfaceAuthCheckInterceptor implements HandlerInterceptor {
 
-    private Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     StringRedisTemplate stringRedisTemplate;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object obj) throws Exception {
+    public boolean preHandle(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object obj) {
         if (logger.isInfoEnabled()) {
             logger.info("interceptor url：" + request.getRequestURL());
         }
@@ -27,10 +28,10 @@ class InterfaceAuthCheckInterceptor implements HandlerInterceptor {
     }
 
     @Override
-    public void afterCompletion(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, Exception arg3) throws Exception {
+    public void afterCompletion(@NotNull HttpServletRequest arg0, @NotNull HttpServletResponse arg1, @NotNull Object arg2, Exception arg3) {
     }
 
     @Override
-    public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, ModelAndView arg3) throws Exception {
+    public void postHandle(@NotNull HttpServletRequest arg0, @NotNull HttpServletResponse arg1, @NotNull Object arg2, ModelAndView arg3) {
     }
 }

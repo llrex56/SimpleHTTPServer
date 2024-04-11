@@ -1,0 +1,47 @@
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+  ## 数据源配置
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:schema.sql #，每次启动程序，程序都会运行schema.sql文件，对数据库的数据操作
+    data: classpath:data.sql #，每次启动程序，程序都会运行data.sql文件，对数据库的数据操作
+    url: jdbc:h2:mem:test #配置h2数据库的连接地址
+    username: sa
+    password: sa
+  h2:
+    console:
+      enabled: true #开启web console功能
+
+#  redis:
+#    host: r-wz925fb8fbfcd7c4pd.redis.rds.aliyuncs.com
+#    port: 6379
+#    password: TestAomi2020!
+
+## Mybatis配置
+mybatis:
+  type-aliases-package: springboot.demo.domain
+  mapper-locations: classpath:mapper/*.xml
+
+logging:
+  config: classpath:log4j2.xml
+  level:
+    springboot.demo: debug
+
+#logbook:
+#  include: /**
+#  format:
+#    style: http
+#  write:
+#    level: info

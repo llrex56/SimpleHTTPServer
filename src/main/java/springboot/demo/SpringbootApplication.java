@@ -31,7 +31,7 @@ public class SpringbootApplication {
         SpringApplication.run(SpringbootApplication.class, args);
     }
 
-//    @Bean
+    @Bean
     public RedisTaskScheduler redisTaskScheduler(StringRedisTemplate redisTemplate) {
         RedisDriver driver = new RedisTemplateDriver(redisTemplate);
         RedisTaskScheduler result = new RedisTaskScheduler(driver, taskId -> {

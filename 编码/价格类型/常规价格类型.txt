@@ -1,0 +1,576 @@
+{
+  "data": [
+    {
+      "ratetypeId": -1,
+      "ratetypeName": "限住2晚-无早C"
+    },
+    {
+      "ratetypeId": 1463021,
+      "ratetypeName": "限住1晚-双早-禁裸卖"
+    },
+    {
+      "ratetypeId": 1463022,
+      "ratetypeName": "限住2晚-双早-禁裸卖"
+    },
+    {
+      "ratetypeId": 1463023,
+      "ratetypeName": "限住3晚-双早-禁裸卖"
+    },
+    {
+      "ratetypeId": 960582,
+      "ratetypeName": "限住2晚-双早-禁裸卖"
+    },
+    {
+      "ratetypeId": 134241,
+      "ratetypeName": "限住3晚-双早-禁裸卖"
+    },
+    {
+      "ratetypeId": 134625,
+      "ratetypeName": "限住2晚-无早-禁裸卖"
+    },
+    {
+      "ratetypeId": 134626,
+      "ratetypeName": "限住3晚-无早-禁裸卖"
+    },
+    {
+      "ratetypeId": 1471588,
+      "ratetypeName": "限住1晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1471589,
+      "ratetypeName": "限住2晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1471590,
+      "ratetypeName": "限住3晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1471593,
+      "ratetypeName": "限住3晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 20129,
+      "ratetypeName": "十份早餐"
+    },
+    {
+      "ratetypeId": 20127,
+      "ratetypeName": "八份早餐"
+    },
+    {
+      "ratetypeId": 1469035,
+      "ratetypeName": "无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1469038,
+      "ratetypeName": "无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1469039,
+      "ratetypeName": "无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1469040,
+      "ratetypeName": "无早B"
+    },
+    {
+      "ratetypeId": 20126,
+      "ratetypeName": "七份早餐"
+    },
+    {
+      "ratetypeId": 1473562,
+      "ratetypeName": "限住1晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1473563,
+      "ratetypeName": "限住2晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1473564,
+      "ratetypeName": "限住3晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1473565,
+      "ratetypeName": "限住1晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1473566,
+      "ratetypeName": "限住2晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1473567,
+      "ratetypeName": "限住3晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1470086,
+      "ratetypeName": "限住1晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1470087,
+      "ratetypeName": "限住2晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1470088,
+      "ratetypeName": "限住3晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1470092,
+      "ratetypeName": "限住1晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1470093,
+      "ratetypeName": "限住2晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1470094,
+      "ratetypeName": "限住3晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1470095,
+      "ratetypeName": "限住1晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1470096,
+      "ratetypeName": "限住2晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1470097,
+      "ratetypeName": "限住3晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 20123,
+      "ratetypeName": "四份早餐"
+    },
+    {
+      "ratetypeId": 20125,
+      "ratetypeName": "六份早餐"
+    },
+    {
+      "ratetypeId": 20124,
+      "ratetypeName": "五份早餐"
+    },
+    {
+      "ratetypeId": 1471446,
+      "ratetypeName": "双早E-禁裸卖1"
+    },
+    {
+      "ratetypeId": 20122,
+      "ratetypeName": "三份早餐"
+    },
+    {
+      "ratetypeId": 1473465,
+      "ratetypeName": "双早E"
+    },
+    {
+      "ratetypeId": 134364,
+      "ratetypeName": "双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 112889,
+      "ratetypeName": "无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1469046,
+      "ratetypeName": "双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1469047,
+      "ratetypeName": "双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1467640,
+      "ratetypeName": "无早-优惠"
+    },
+    {
+      "ratetypeId": 1467641,
+      "ratetypeName": "限住1晚-无早-优惠"
+    },
+    {
+      "ratetypeId": 1467642,
+      "ratetypeName": "限住2晚-无早-优惠"
+    },
+    {
+      "ratetypeId": 1467643,
+      "ratetypeName": "限住3晚-无早-优惠"
+    },
+    {
+      "ratetypeId": 1466735,
+      "ratetypeName": "限住1晚-无早B"
+    },
+    {
+      "ratetypeId": 1466736,
+      "ratetypeName": "限住2晚-无早B"
+    },
+    {
+      "ratetypeId": 1466737,
+      "ratetypeName": "限住3晚-无早B"
+    },
+    {
+      "ratetypeId": 1466738,
+      "ratetypeName": "限住1晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1466741,
+      "ratetypeName": "限住1晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1466744,
+      "ratetypeName": "限住1晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1471003,
+      "ratetypeName": "限住1晚-无早B"
+    },
+    {
+      "ratetypeId": 1471004,
+      "ratetypeName": "限住2晚-无早B"
+    },
+    {
+      "ratetypeId": 1471005,
+      "ratetypeName": "限住3晚-无早B"
+    },
+    {
+      "ratetypeId": 1471006,
+      "ratetypeName": "限住1晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1471007,
+      "ratetypeName": "限住2晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1471008,
+      "ratetypeName": "限住3晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1471009,
+      "ratetypeName": "限住1晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1471010,
+      "ratetypeName": "限住2晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1471011,
+      "ratetypeName": "限住3晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1466721,
+      "ratetypeName": "限住2晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1466722,
+      "ratetypeName": "限住3晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1466723,
+      "ratetypeName": "限住1晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1466724,
+      "ratetypeName": "限住2晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1466725,
+      "ratetypeName": "限住3晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1466727,
+      "ratetypeName": "限住2晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1466730,
+      "ratetypeName": "限住2晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1466731,
+      "ratetypeName": "限住3晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1466732,
+      "ratetypeName": "限住1晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1466733,
+      "ratetypeName": "限住2晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1466734,
+      "ratetypeName": "限住3晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1042824,
+      "ratetypeName": "限住1晚-双早-禁裸卖"
+    },
+    {
+      "ratetypeId": 1471746,
+      "ratetypeName": "限住1晚-无早B"
+    },
+    {
+      "ratetypeId": 1471747,
+      "ratetypeName": "限住2晚-无早B"
+    },
+    {
+      "ratetypeId": 1471748,
+      "ratetypeName": "限住3晚-无早B"
+    },
+    {
+      "ratetypeId": 1471749,
+      "ratetypeName": "限住1晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1471750,
+      "ratetypeName": "限住2晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1471755,
+      "ratetypeName": "限住1晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1471756,
+      "ratetypeName": "限住2晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1471757,
+      "ratetypeName": "限住3晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 753,
+      "ratetypeName": "限时特惠"
+    },
+    {
+      "ratetypeId": 283,
+      "ratetypeName": "限时抢购"
+    },
+    {
+      "ratetypeId": 1473209,
+      "ratetypeName": "限住1晚-无早B"
+    },
+    {
+      "ratetypeId": 1473210,
+      "ratetypeName": "限住2晚-无早B"
+    },
+    {
+      "ratetypeId": 1473211,
+      "ratetypeName": "限住3晚-无早B"
+    },
+    {
+      "ratetypeId": 1473218,
+      "ratetypeName": "限住1晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1473219,
+      "ratetypeName": "限住2晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1473220,
+      "ratetypeName": "限住3晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1473221,
+      "ratetypeName": "限住1晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1473222,
+      "ratetypeName": "限住2晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1473223,
+      "ratetypeName": "限住3晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1463048,
+      "ratetypeName": "限住1晚-无早-禁裸卖"
+    },
+    {
+      "ratetypeId": 1463049,
+      "ratetypeName": "限住2晚-无早-禁裸卖"
+    },
+    {
+      "ratetypeId": 1463050,
+      "ratetypeName": "限住3晚-无早-禁裸卖"
+    },
+    {
+      "ratetypeId": 1434005,
+      "ratetypeName": "限住1晚-无早-禁裸卖"
+    },
+    {
+      "ratetypeId": 120618,
+      "ratetypeName": "限住1晚-双早"
+    },
+    {
+      "ratetypeId": 120619,
+      "ratetypeName": "限住2晚-双早"
+    },
+    {
+      "ratetypeId": 120620,
+      "ratetypeName": "限住3晚-双早"
+    },
+    {
+      "ratetypeId": 120621,
+      "ratetypeName": "限住4晚-双早"
+    },
+    {
+      "ratetypeId": 120622,
+      "ratetypeName": "限住5晚-双早"
+    },
+    {
+      "ratetypeId": 120623,
+      "ratetypeName": "限住6晚-双早"
+    },
+    {
+      "ratetypeId": 120624,
+      "ratetypeName": "限住7晚-双早"
+    },
+    {
+      "ratetypeId": 120580,
+      "ratetypeName": "限住1晚-无早"
+    },
+    {
+      "ratetypeId": 120581,
+      "ratetypeName": "限住2晚-无早"
+    },
+    {
+      "ratetypeId": 120582,
+      "ratetypeName": "限住3晚-无早"
+    },
+    {
+      "ratetypeId": 120583,
+      "ratetypeName": "限住4晚-无早"
+    },
+    {
+      "ratetypeId": 120584,
+      "ratetypeName": "限住5晚-无早"
+    },
+    {
+      "ratetypeId": 120585,
+      "ratetypeName": "限住6晚-无早"
+    },
+    {
+      "ratetypeId": 120586,
+      "ratetypeName": "限住7晚-无早"
+    },
+    {
+      "ratetypeId": 1453420,
+      "ratetypeName": "限住1晚-无早B"
+    },
+    {
+      "ratetypeId": 1453424,
+      "ratetypeName": "限住2晚-无早B"
+    },
+    {
+      "ratetypeId": 1453425,
+      "ratetypeName": "限住3晚-无早B"
+    },
+    {
+      "ratetypeId": 1453427,
+      "ratetypeName": "限住1晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1453428,
+      "ratetypeName": "限住2晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1453429,
+      "ratetypeName": "限住3晚-无早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1453431,
+      "ratetypeName": "限住1晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1453432,
+      "ratetypeName": "限住2晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1453433,
+      "ratetypeName": "限住3晚-双早A-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1453435,
+      "ratetypeName": "限住1晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1453436,
+      "ratetypeName": "限住2晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1453437,
+      "ratetypeName": "限住3晚-无早B-禁裸卖1"
+    },
+    {
+      "ratetypeId": 1453439,
+      "ratetypeName": "限住1晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1453440,
+      "ratetypeName": "限住2晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1453441,
+      "ratetypeName": "限住3晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1453443,
+      "ratetypeName": "限住1晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1453444,
+      "ratetypeName": "限住2晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 1453445,
+      "ratetypeName": "限住3晚-双早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 16,
+      "ratetypeName": "单早"
+    },
+    {
+      "ratetypeId": 1467671,
+      "ratetypeName": "双早-优惠"
+    },
+    {
+      "ratetypeId": 1467674,
+      "ratetypeName": "限住1晚-双早-优惠"
+    },
+    {
+      "ratetypeId": 1467675,
+      "ratetypeName": "限住2晚-双早-优惠"
+    },
+    {
+      "ratetypeId": 1467676,
+      "ratetypeName": "限住3晚-双早-优惠"
+    },
+    {
+      "ratetypeId": 1464200,
+      "ratetypeName": "限住1晚-无早A-禁裸卖2"
+    },
+    {
+      "ratetypeId": 56,
+      "ratetypeName": "床位早"
+    },
+    {
+      "ratetypeId": 9,
+      "ratetypeName": "双早"
+    },
+    {
+      "ratetypeId": 17,
+      "ratetypeName": "不含早"
+    },
+    {
+      "ratetypeId": 1476140,
+      "ratetypeName": "限住2晚_不含早"
+    },
+    {
+      "ratetypeId": 1476142,
+      "ratetypeName": "限住1晚_含早"
+    },
+    {
+      "ratetypeId": 1476144,
+      "ratetypeName": "限住3晚_含早"
+    }
+  ],
+  "errmsg": "请求成功",
+  "msg": "查询成功",
+  "success": "1",
+  "errcode": 100
+}

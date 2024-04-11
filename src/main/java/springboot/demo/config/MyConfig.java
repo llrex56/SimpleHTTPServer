@@ -5,10 +5,11 @@ import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Collections;
+import java.util.List;
 
 //@Configuration
 public class MyConfig {
@@ -32,5 +33,19 @@ public class MyConfig {
         client.addTransportAddress(node2);
         client.addTransportAddress(node3);
         return client;
+    }
+
+    public static void fn(
+            @org.springframework.lang.NonNull Integer a,
+//            @lombok.NonNull Integer b,
+            @lombok.NonNull List<Integer> c
+            ) {
+        System.out.println(a);
+//        System.out.println(b);
+        System.out.println(c);
+    }
+
+    public static void main(String[] args) {
+        fn(null, Collections.emptyList());
     }
 }

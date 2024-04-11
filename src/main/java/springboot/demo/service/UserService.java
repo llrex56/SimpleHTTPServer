@@ -4,5 +4,5 @@ import springboot.demo.domain.IntAuthToken;
 
 public interface UserService {
 
-    public IntAuthToken findByIntAuthToken(String intAuthToken);
+    IntAuthToken findByIntAuthToken(String intAuthToken);
 }

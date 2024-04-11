@@ -17,13 +17,13 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class TestRedisSchedulerController {
 
-    //private final RedisTaskScheduler redisTaskScheduler;
+    private final RedisTaskScheduler redisTaskScheduler;
 
     @GetMapping("/test/{id}")
     @ResponseBody
     public Object test(@PathVariable("id") String taskId) {
         Instant triggerTime = Instant.now().plusSeconds(TimeUnit.SECONDS.toSeconds(500));
-        //redisTaskScheduler.scheduleAt(taskId, triggerTime);
+        redisTaskScheduler.scheduleAt(taskId, triggerTime);
 
         return triggerTime;
     }
